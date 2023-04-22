@@ -4,7 +4,94 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Warehouse</title>
   </head>
-  <body></body>
+  <body>
+    <!-- mobile side navbar -->
+    <nav class="mobile-nav">
+      <div class="menu-close">
+        <div>
+          <img src="./images/xmark-solid.svg" alt="menu close" />
+        </div>
+      </div>
+    </nav>
+    <!-- ////////////// -->
+
+    <!-- hader -->
+    <header>
+      <!-- desktop navbar -->
+      <nav class="desk-nav">
+        <div class="logo">
+          <a href="#home">Warehouse</a>
+        </div>
+        <div class="menu-bar">
+          <div>
+            <img src="./images/bars-solid.svg" alt="menu bars" />
+          </div>
+        </div>
+      </nav>
+      <!-- /////////////////// -->
+
+      <!-- header main -->
+
+      <!-- carousel -->
+      <div class="carousel">
+        <!-- ///////// -->
+        <div class="carousel-item" id="image1">
+          <div class="carousel-container">
+            <h1 class="header1">buy & sell property here</h1>
+            <p class="text-big">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro,
+              numquam?
+            </p>
+            <btn type="button" class="main-btn text-big">Get Started</btn>
+          </div>
+        </div>
+        <!-- /////////// -->
+        <!-- ///////// -->
+        <div class="carousel-item image-wait" id="image2">
+          <div class="carousel-container">
+            <h1 class="header1">Find Your Perfect Property For Your Home</h1>
+            <p class="text-big">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+              quod blanditiis eius.
+            </p>
+            <btn type="button" class="main-btn text-big">Get Started</btn>
+          </div>
+        </div>
+        <!-- /////////// -->
+      </div>
+      <!-- /////////// -->
+
+      <div class="carousel-dots">
+        <span class="dot dot-active" data-image="image2"></span>
+        <span class="dot" data-image="image1"></span>
+      </div>
+    </header>
+    <!-- ///////// header /////////////-->
+
+    <!-- main -->
+    <main>
+      <section id="properties" data-nav="properties" class="section">
+        <div class="header1">properties</div>
+      </section>
+      <section id="agents" data-nav="agents" class="section">
+        <div class="header1">agents</div>
+      </section>
+      <section id="about" data-nav="about" class="section">
+        <div class="header1">about</div>
+      </section>
+      <section id="news" data-nav="news" class="section">
+        news
+        <div class="header1"></div>
+      </section>
+      <section id="contact" data-nav="contact" class="section">
+        <div class="header1">contact</div>
+      </section>
+    </main>
+
+    <!-- ////////// main ////////// -->
+    <script src="./js/scripts.js"></script>
+  </body>
 </html>

@@ -1,0 +1,14 @@
+:root {
+  --light-color: #fff;
+  --secondary-light-color: rgba(255, 255, 255, 0.5);
+  --dark-color: #000;
+  --secondary-dark-color: #343a40;
+  --brand-color: #37cfa2;
+  --brand-color-hover: #249674;
+
+  --linear: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}

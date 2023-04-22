@@ -1,0 +1,13 @@
+.main-btn {
+  color: var(--light-color);
+  background: var(--brand-color);
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .main-btn {
+    padding: 0.8rem 1.8rem;
+  }
+}

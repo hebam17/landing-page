@@ -1,0 +1,71 @@
+.header1 {
+  font-size: 3rem;
+}
+
+.header2 {
+  font-size: 2.5rem;
+}
+
+.header3 {
+  font-size: 1.4rem;
+}
+
+.text-big {
+  font-size: 1.2rem;
+}
+
+.text-sm {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .header1 {
+    font-size: 2.5rem;
+  }
+
+  .header2 {
+    font-size: 2rem;
+  }
+
+  .header3 {
+    font-size: 1.4rem;
+  }
+
+  .text-xbig {
+    font-size: 1.3rem;
+  }
+
+  .text-big {
+    font-size: 1.1rem;
+  }
+
+  .text-sm {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header1 {
+    font-size: 2rem;
+  }
+
+  .header2 {
+    font-size: 1.7rem;
+  }
+
+  .header3 {
+    font-size: 1.3rem;
+  }
+
+  .text-xbig {
+    font-size: 1.2rem;
+  }
+
+  .text-big {
+    font-size: 1rem;
+  }
+
+  .text-sm {
+    font-size: 0.9rem;
+  }
+}

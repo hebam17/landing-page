@@ -1,0 +1,303 @@
+/* header */
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* mobile nav */
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 30vw;
+  z-index: 999;
+  background: var(--light-color);
+  padding: 1.5rem;
+  transform: translate(30vw);
+  transition: all 0.4s;
+}
+
+/* class to toggle to open the mobile nav */
+.open-mobile-nav {
+  transform: translate(0vw);
+}
+
+.mobile-nav-container {
+  padding: 0;
+  list-style-type: none;
+}
+
+.mobile-nav-item {
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.mobile-nav-item:hover {
+  cursor: pointer;
+  color: var(--brand-color);
+}
+
+.mobile-nav-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-nav .menu-close {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.mobile-nav .menu-close div {
+  width: 1rem;
+  cursor: pointer;
+}
+
+.mobile-nav .main-close div img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .mobile-nav {
+    transform: translate(40vw);
+    width: 40vw;
+  }
+
+  .open-mobile-nav {
+    transform: translate(0vw);
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .mobile-nav {
+    transform: translate(60vw);
+    width: 60vw;
+  }
+
+  .open-mobile-nav {
+    transform: translate(0vw);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-nav {
+    transform: translate(80vw);
+    width: 80vw;
+  }
+
+  .open-mobile-nav {
+    transform: translate(0vw);
+  }
+}
+
+/* //////////// */
+
+/* desktop nav */
+.desk-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 1.5rem 8rem;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--light-color);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* the menu bars */
+.menu-bar {
+  display: none;
+  cursor: pointer;
+}
+.menu-bar div {
+  width: 1rem;
+}
+
+.menu-bar div img {
+  width: 100%;
+}
+
+.desk-nav-container {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.desk-nav-item {
+  margin-left: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--secondary-light-color);
+}
+
+.desk-nav-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.desk-nav-item:hover {
+  color: var(--light-color);
+}
+
+/* add this to the nav item when the corresponding section is in viewport */
+.active-nav-item a,
+.active-nav-item a:hover {
+  color: var(--brand-color);
+}
+
+/* add this to the desk nav when scrool */
+.scrolled-nav {
+  background: var(--light-color);
+  padding: 1rem 8rem;
+}
+
+.scrolled-nav .desk-nav-item {
+  color: var(--dark-color);
+}
+
+.scrolled-nav .logo a {
+  color: var(--dark-color);
+}
+
+@media screen and (max-width: 1200px) {
+  .desk-nav-container {
+    display: none;
+  }
+
+  .menu-bar {
+    display: block;
+  }
+
+  .desk-nav {
+    padding: 1.5rem 2rem;
+  }
+
+  .scrolled-nav {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo a {
+    font-size: 1.4rem;
+  }
+}
+
+/* //////// desktop nav end //////// */
+
+/* header main */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.carousel-item {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.carousel-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.carousel-container h1 {
+  color: var(--light-color);
+  line-height: 120%;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.carousel-container p {
+  color: var(--light-color);
+  line-height: 120%;
+  letter-spacing: 1px;
+}
+
+.carousel-container .main-btn {
+  margin-top: 2rem;
+}
+
+header::after {
+  content: "";
+  background-image: var(--linear);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#image1 {
+  background: var(--secondary-dark-color)
+    url("../images/sven-brandsma-GZ5cKOgeIB0-unsplash.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#image2 {
+  background: var(--secondary-dark-color)
+    url("../images/r-architecture-TRCJ-87Yoh0-unsplash.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.image-wait {
+  display: none;
+}
+
+/* the carousel dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 3rem;
+  left: 47%;
+  z-index: 1;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  margin-left: 0.3rem;
+  border: solid 3px var(--light-color);
+  cursor: pointer;
+}
+
+.carousel-dots .dot:hover,
+.carousel-dots .dot-active {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+/* /////////// */
+/* ///////// header main end ////////// */

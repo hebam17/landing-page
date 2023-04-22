@@ -1,0 +1,27 @@
+/* imports */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+
+@import url(variables.css);
+@import url(typography.css);
+@import url(components.css);
+@import url(header.css);
+@import url(main.css);
+
+*,
+::before,
+::after {
+  font-family: "Oswald", sans-serif;
+  box-sizing: border-box;
+  font-weight: 300;
+  transition: all 0.5s linear;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
