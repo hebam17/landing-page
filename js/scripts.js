@@ -15,6 +15,8 @@ const navClose = document.getElementsByClassName("menu-close")[0];
 
 const sections = document.getElementsByClassName("section");
 
+const toTopBtn = document.getElementsByClassName("toTop")[0];
+
 // create links function
 ((e) => {
   //  create a fragment and ul for mobile navbar
@@ -85,20 +87,15 @@ const takeTurns = () => {
 
 // the click handler whitch change the active carousel item / dot by clickin dots
 const slide = (e) => {
-  console.log(e);
   // a dot was clicked
   clearInterval(interval);
   let imageData = e.target.dataset.image;
   for (item of carouselItems) {
     if (item.id === imageData && !item.classList.contains("image-wait")) {
-      console.log(item);
       item.classList.add("image-wait");
     } else if (item.id !== imageData && item.classList.contains("image-wait")) {
-      console.log(item);
       item.classList.remove("image-wait");
     }
-
-    console.log(imageData);
   }
   for (dot of carouselDots.children) {
     dot === e.target
@@ -112,18 +109,30 @@ const slide = (e) => {
   }, 4000);
 };
 
+console.log(navOpen.querySelector("div img"));
 // scrollnav handle function
 const scrollNav = (e) => {
   let scroll = window.scrollY;
-  scroll > 0
-    ? deskNav.classList.add("scrolled-nav")
-    : deskNav.classList.remove("scrolled-nav");
+  if (scroll > 0) {
+    deskNav.classList.add("scrolled-nav");
+    navOpen.querySelector("div img").src = "./images/bars-solid-black.svg";
+  } else {
+    deskNav.classList.remove("scrolled-nav");
+    navOpen.querySelector("div img").src = "./images/bars-solid.svg";
+  }
 };
 
 // handle the chandes that happen when scrolling
 const handleScroll = () => {
   // to change the desk navbar when scrooling
   scrollNav();
+
+  // to make the to top button appear after scroll more than viewport height
+  if (window.scrollY > 300) {
+    toTopBtn.style.display = "inline-block";
+  } else {
+    toTopBtn.style.display = "none";
+  }
 
   // holds all sections that passed the views screen, put empty placeholder to pass the empty check below
   let current = [""];
@@ -136,7 +145,6 @@ const handleScroll = () => {
       current.push(section.id);
     }
   }
-  console.log(current);
   // search throught the desk/mobile links to add active class to the one that corresponse to the current viewd section
 
   if (current.length > 0) {
@@ -186,5 +194,3 @@ deskNavContainer.addEventListener("click", (e) => {
     }
   }
 });
-
-console.log(deskLinks[4]);

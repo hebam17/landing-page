@@ -1,9 +1,57 @@
+/* main btn */
 .main-btn {
   color: var(--light-color);
   background: var(--brand-color);
   padding: 1rem 3rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* card */
+.prop-card {
+  padding: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* width: 250px; */
+}
+
+.prop-card:hover {
+  cursor: pointer;
+  box-shadow: 9px 9px 22px -6px rgba(0, 0, 0, 0.71);
+  -webkit-box-shadow: 9px 9px 22px -6px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 9px 9px 22px -6px rgba(0, 0, 0, 0.71);
+}
+
+.prop-card .card-img {
+  padding: 0;
+  /* min-height: 100px; */
+  height: 80vh;
+  /* width: 10rem; */
+}
+
+.prop-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prop-card .prop-info {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.prop-info .header3 {
+  margin: 0;
+}
+
+.prop-info h3 {
+  color: var(--dark-color);
+}
+
+.prop-info p {
+  color: var(--secondary-dark-color);
+  margin: 0.4rem 0;
 }
 
 @media screen and (max-width: 768px) {
