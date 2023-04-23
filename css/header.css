@@ -232,11 +232,11 @@ header {
   text-align: center;
 }
 
-.carousel-container h1 {
+.carousel-container .header1 {
   color: var(--light-color);
   line-height: 120%;
+  text-transform: uppercase;
   margin: 0 auto;
-  opacity: 0.8;
 }
 
 .carousel-container p {

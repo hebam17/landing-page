@@ -187,6 +187,7 @@ window.addEventListener("scroll", handleScroll);
 
 deskNavContainer.addEventListener("click", (e) => {
   if (e.target.nodeName === "A") {
+    e.preventDefault();
     for (section of sections) {
       if (`#${section.id}` === e.target.hash) {
         section.scrollIntoView();

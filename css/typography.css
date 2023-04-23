@@ -10,6 +10,10 @@
   font-size: 1.4rem;
 }
 
+.text-xbig {
+  font-size: 1.3rem;
+}
+
 .text-big {
   font-size: 1.2rem;
 }
@@ -32,7 +36,7 @@
   }
 
   .text-xbig {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .text-big {
@@ -58,7 +62,7 @@
   }
 
   .text-xbig {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .text-big {
