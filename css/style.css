@@ -1,6 +1,8 @@
 /* imports */
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+
 @import url(variables.css);
 @import url(typography.css);
 @import url(components.css);

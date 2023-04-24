@@ -7,6 +7,16 @@
   cursor: pointer;
 }
 
+.main-btn:active {
+  border: none;
+  outline: none;
+}
+
+.main-btn:focus {
+  border: none;
+  outline: none;
+}
+
 /* prop card */
 .prop-card {
   padding: 0;
@@ -23,7 +33,7 @@
 
 .prop-card .card-img {
   padding: 0;
-  height: 80vh;
+  height: 60vh;
 }
 
 .prop-card .card-img img {
@@ -72,7 +82,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  height: 80vh;
+  height: 45vh;
   overflow: hidden;
 }
 
@@ -125,6 +135,62 @@
   margin: 0;
 }
 /* agent card end */
+
+/* input start */
+label {
+  display: block;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 0.5rem 0 0;
+  margin-bottom: 1rem;
+  border-style: none none solid none;
+  border-color: var(--secondary-dark-color);
+  border-width: 1px;
+  font-size: 1.2rem;
+}
+
+input:focus,
+input:active {
+  outline: none;
+  border-bottom: solid 1px var(--brand-color);
+}
+
+/* input end */
+
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+  .prop-card .card-img {
+    height: 80vh;
+  }
+
+  .agent-card-img {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .prop-card .card-img {
+    height: 100vh;
+  }
+
+  .agent-card-img {
+    height: 55vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .prop-card .card-img {
+    height: 110vh;
+  }
+
+  .agent-card-img {
+    height: 55vh;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .main-btn {

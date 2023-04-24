@@ -1,6 +1,5 @@
 /* to top button */
 .toTop {
-  /* display: inline-block; */
   padding: 0.7rem;
   background: var(--brand-color);
   border-radius: 7px;
@@ -16,29 +15,40 @@
   height: 1.5rem;
 }
 /* ////////// */
-/* the main section */
+/* THE MAIN SECTION */
 
-/* THE PROPERTIES SECTION START */
-.properties {
-  margin: 5rem 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-gap: 4rem;
+.section {
+  margin: 8rem;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  .section {
+    margin: 6rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .section {
+    margin: 5rem 4rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .properties {
-    margin: 2rem;
+  .section {
+    margin: 5rem 2rem;
   }
+}
+
+/* THE PROPERTIES SECTION START */
+.properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-gap: 4rem;
 }
 
 /* ///////// THE PROPERTIES SECTION end ////////// */
 
-/* THE agents SECTION START */
-.agents {
-  margin: 7rem 3rem 5rem;
-}
-
+/* THE AGENTS SECTION START */
 .agents .header2 {
   color: var(--brand-color);
   letter-spacing: 1px;
@@ -54,27 +64,22 @@
 }
 
 @media screen and (max-width: 768px) {
-  .agents {
-    margin: 3rem 2rem;
-  }
-
   .agents-card-container {
     margin: 2rem 0 0 0;
   }
 }
-/* /////////   THE agents SECTION end
+/* /////////   THE AGENTS SECTION end
 /////////// */
 
-/* THE about SECTION START */
+/* THE ABOUT SECTION START */
 .about {
-  margin: 7rem 3rem 5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .about-img {
   margin-right: 3rem;
-  max-height: 100vh;
+  max-height: 60vh;
   padding: 0;
   flex: 1;
 }
@@ -105,6 +110,7 @@
 
 .info-check {
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .info-check ul {
@@ -140,20 +146,16 @@
   .about-info {
     margin-top: 3rem;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .about {
-    margin: 4rem 2rem;
+  .info-check {
+    margin-bottom: 0;
   }
 }
-/* /////////  THE about SECTION end
+
+/* /////////  THE ABOUT SECTION end
  ////////// */
 
-/* THE news SECTION START */
-.news {
-  margin: 7rem 3rem 5rem;
-}
+/* THE NEWS SECTION START */
 
 .news .header2 {
   text-transform: uppercase;
@@ -197,17 +199,100 @@
   color: var(--brand-color);
 }
 
-@media screen and (max-width: 768px) {
-  .news {
-    margin: 4rem 2rem;
-  }
-}
-
 @media screen and (max-width: 360px) {
   .news-container {
     grid-template-columns: 1fr;
   }
 }
 
-/* //////// THE news SECTION end /////////*/
-/* /////////////// */
+/* //////// THE NEWS SECTION end /////////*/
+
+/* THE CONTACT SECTION START */
+
+.contact .header2 {
+  color: var(--brand-color);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family2);
+}
+
+.urs,
+.ours {
+  flex: 1;
+}
+
+.urs {
+  padding: 0 4rem;
+}
+
+.urs .header3 {
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+.ours {
+  padding-left: 2rem;
+}
+
+.ours > div {
+  margin-bottom: 2rem;
+}
+
+.ours > div div:first-child {
+  font-weight: bold;
+}
+
+.ours .address,
+.phone div:first-child,
+.email div:first-child {
+  color: var(--secondary-dark-color);
+}
+
+.address div:first-child,
+.phone div:first-child,
+.email div:first-child {
+  margin-bottom: 0.3rem;
+}
+
+.phone div:last-child a,
+.email div:last-child a {
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+.urs .main-btn {
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 1rem;
+  border: none;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .urs {
+    padding: 0 2rem;
+  }
+
+  .ours {
+    padding-left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .urs {
+    margin-bottom: 4rem;
+  }
+  .urs,
+  .ours {
+    padding: 0 3rem;
+  }
+}
+/* //////// THE CONTACT SECTION end /////////*/
