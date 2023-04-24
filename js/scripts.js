@@ -109,7 +109,6 @@ const slide = (e) => {
   }, 4000);
 };
 
-console.log(navOpen.querySelector("div img"));
 // scrollnav handle function
 const scrollNav = (e) => {
   let scroll = window.scrollY;
