@@ -16,6 +16,7 @@ header {
   padding: 1.5rem;
   transform: translate(30vw);
   transition: all 0.4s;
+  /* overflow: hidden; */
 }
 
 /* class to toggle to open the mobile nav */
@@ -107,6 +108,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  overflow: hidden;
 }
 
 .logo a {

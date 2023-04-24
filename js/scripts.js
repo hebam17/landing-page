@@ -109,8 +109,13 @@ const slide = (e) => {
   }, 4000);
 };
 
+// start the slider
+interval = setInterval(() => {
+  takeTurns();
+}, 4000);
+
 // scrollnav handle function
-const scrollNav = (e) => {
+const scrollNav = () => {
   let scroll = window.scrollY;
   if (scroll > 0) {
     deskNav.classList.add("scrolled-nav");
@@ -121,18 +126,16 @@ const scrollNav = (e) => {
   }
 };
 
-// handle the chandes that happen when scrolling
-const handleScroll = () => {
-  // to change the desk navbar when scrooling
-  scrollNav();
-
+const toTopBtnHandler = () => {
   // to make the to top button appear after scroll more than viewport height
   if (window.scrollY > 300) {
     toTopBtn.style.display = "inline-block";
   } else {
     toTopBtn.style.display = "none";
   }
+};
 
+const activeSectionsAndLinks = () => {
   // holds all sections that passed the views screen, put empty placeholder to pass the empty check below
   let current = [""];
   for (section of sections) {
@@ -144,15 +147,28 @@ const handleScroll = () => {
       current.push(section.id);
     }
   }
-  // search throught the desk/mobile links to add active class to the one that corresponse to the current viewd section
 
+  // the current active section id
+  let currentActive = current[current.length - 1];
+
+  // add the active class to the current active section
+  for (section of sections) {
+    if (section.id === currentActive) {
+      section.classList.add("active");
+    } else {
+      section.classList.remove("active");
+    }
+  }
+
+  // search throught the desk/mobile links to add active class to the one that corresponse to the current viewd section
   if (current.length > 0) {
-    let currentActive = current[current.length - 1];
-    for (mobLink of mobileLinks) {
-      if (mobLink.firstElementChild.hash === `#${currentActive}`) {
-        mobLink.classList.add("active-nav-item");
-      } else {
-        mobLink.classList.remove("active-nav-item");
+    if (mobileNav.classList.contains("open-mobile-nav")) {
+      for (mobLink of mobileLinks) {
+        if (mobLink.firstElementChild.hash === `#${currentActive}`) {
+          mobLink.classList.add("active-nav-item");
+        } else {
+          mobLink.classList.remove("active-nav-item");
+        }
       }
     }
     for (deskLink of deskLinks) {
@@ -163,6 +179,19 @@ const handleScroll = () => {
       }
     }
   }
+};
+
+// handle the chandes that happen when scrolling
+const handleScroll = (e) => {
+  // to change the desk navbar when scrooling
+  scrollNav();
+
+  // to top button handler
+  // to make the to top button appear after scroll more than viewport height
+  toTopBtnHandler();
+
+  // handle the links and sections activation
+  activeSectionsAndLinks();
 };
 
 // ////////// EVENT LISTENERS ///////////
@@ -193,4 +222,17 @@ deskNavContainer.addEventListener("click", (e) => {
       }
     }
   }
+});
+
+// make the navbar disappear when not scroll for 5 second
+let disappear;
+window.addEventListener("scroll", () => {
+  clearTimeout(disappear);
+  deskNav.style.transform = "translateY(0)";
+
+  disappear = setTimeout(() => {
+    if (!mobileNav.classList.contains("open-mobile-nav")) {
+      deskNav.style.transform = "translateY(-6rem)";
+    }
+  }, 5000);
 });

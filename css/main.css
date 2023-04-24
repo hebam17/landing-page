@@ -1,3 +1,34 @@
+/* key frames */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+    transform: rotate(0);
+    right: 10%;
+    top: 0%;
+  }
+
+  25% {
+    right: 100%;
+    top: 50%;
+  }
+  50% {
+    right: 0%;
+    top: 100%;
+  }
+  75% {
+    right: 100%;
+    top: 50%;
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    transform: rotate(360deg);
+    right: 10%;
+    top: 0%;
+  }
+}
+/* //////////////// */
+
 /* to top button */
 .toTop {
   padding: 0.7rem;
@@ -18,24 +49,25 @@
 /* THE MAIN SECTION */
 
 .section {
-  margin: 8rem;
+  padding: 8rem;
+  position: relative;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1025px) {
   .section {
-    margin: 6rem;
+    padding: 6rem;
   }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .section {
-    margin: 5rem 4rem;
+    padding: 5rem 4rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .section {
-    margin: 5rem 2rem;
+    padding: 5rem 2rem;
   }
 }
 
@@ -296,3 +328,18 @@
   }
 }
 /* //////// THE CONTACT SECTION end /////////*/
+
+/* THE ACTIVE SECTION CLASS */
+.active div:first-child::before {
+  content: "";
+  width: 7rem;
+  height: 7rem;
+  background: var(--brand-color);
+  opacity: 0.5;
+  animation: rotate 8s linear 0s infinite normal backwards;
+  z-index: -1;
+  position: absolute;
+  right: -3rem;
+  top: 1rem;
+}
+/* ////////////// */
