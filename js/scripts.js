@@ -181,6 +181,19 @@ const activeSectionsAndLinks = () => {
   }
 };
 
+// make the navbar disappear when not scroll for 5 second
+let disappear;
+const hideNav = () => {
+  clearTimeout(disappear);
+  deskNav.style.transform = "translateY(0)";
+
+  disappear = setTimeout(() => {
+    if (!mobileNav.classList.contains("open-mobile-nav")) {
+      deskNav.style.transform = "translateY(-6rem)";
+    }
+  }, 5000);
+};
+
 // handle the chandes that happen when scrolling
 const handleScroll = (e) => {
   // to change the desk navbar when scrooling
@@ -192,6 +205,31 @@ const handleScroll = (e) => {
 
   // handle the links and sections activation
   activeSectionsAndLinks();
+
+  // make the navbar disappear when not scroll for 5 second
+  hideNav();
+};
+
+// scroll to section when clicking the corresponding link
+const scrollToSection = (e) => {
+  if (e.target.nodeName === "A") {
+    e.preventDefault();
+    for (section of sections) {
+      if (`#${section.id}` === e.target.hash) {
+        section.scrollIntoView();
+      }
+    }
+  }
+};
+
+// open side nav
+const openSideNav = () => {
+  mobileNav.classList.add("open-mobile-nav");
+};
+
+// close the side nam
+const closeSideNav = () => {
+  mobileNav.classList.remove("open-mobile-nav");
 };
 
 // ////////// EVENT LISTENERS ///////////
@@ -201,38 +239,12 @@ const handleScroll = (e) => {
 carouselDots.addEventListener("click", slide);
 
 // open and close the mobile nav
-navOpen.addEventListener("click", () => {
-  mobileNav.classList.add("open-mobile-nav");
-});
+navOpen.addEventListener("click", openSideNav);
 
-navClose.addEventListener("click", () => {
-  mobileNav.classList.remove("open-mobile-nav");
-});
+navClose.addEventListener("click", closeSideNav);
 
 // add a class to the nav when scrooling
 
 window.addEventListener("scroll", handleScroll);
 
-deskNavContainer.addEventListener("click", (e) => {
-  if (e.target.nodeName === "A") {
-    e.preventDefault();
-    for (section of sections) {
-      if (`#${section.id}` === e.target.hash) {
-        section.scrollIntoView();
-      }
-    }
-  }
-});
-
-// make the navbar disappear when not scroll for 5 second
-let disappear;
-window.addEventListener("scroll", () => {
-  clearTimeout(disappear);
-  deskNav.style.transform = "translateY(0)";
-
-  disappear = setTimeout(() => {
-    if (!mobileNav.classList.contains("open-mobile-nav")) {
-      deskNav.style.transform = "translateY(-6rem)";
-    }
-  }, 5000);
-});
+deskNavContainer.addEventListener("click", scrollToSection);
