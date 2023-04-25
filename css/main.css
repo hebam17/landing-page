@@ -49,25 +49,25 @@
 /* THE MAIN SECTION */
 
 .section {
-  padding: 8rem;
+  padding: 4rem 8rem;
   position: relative;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1025px) {
   .section {
-    padding: 6rem;
+    padding: 4rem 6rem;
   }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .section {
-    padding: 5rem 4rem;
+    padding: 3rem 4rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .section {
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
   }
 }
 
