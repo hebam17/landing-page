@@ -61,7 +61,7 @@ footer > div .header3 {
   border-radius: 5px 0 0 5px;
   width: 100%;
   border-right: none;
-  min-width: 150px;
+  /* min-width: 150px; */
 }
 
 .subscribe-input input::placeholder {
@@ -113,10 +113,10 @@ footer > div .header3 {
   }
 }
 
-@media screen and (max-width: 768px) and(min-width: 481px) {
+@media screen and (max-width: 768px) and (min-width: 481px) {
   footer {
     flex-direction: column;
-    padding: 4rem;
+    padding: 3rem 1rem;
     align-items: initial;
   }
 
@@ -124,9 +124,13 @@ footer > div .header3 {
     margin: 2rem 0;
     text-align: left;
   }
+
+  footer > div .header3 {
+    font-weight: normal;
+  }
 }
 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 480px) {
   footer {
     flex-direction: column;
     padding: 4rem 1rem;

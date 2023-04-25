@@ -147,6 +147,7 @@ const activeSectionsAndLinks = () => {
       current.push(section.id);
     }
   }
+  console.log(current);
 
   // the current active section id
   let currentActive = current[current.length - 1];
