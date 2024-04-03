@@ -16,7 +16,6 @@ header {
   padding: 1.5rem;
   transform: translate(30vw);
   transition: all 0.4s;
-  /* overflow: hidden; */
 }
 
 /* class to toggle to open the mobile nav */
@@ -270,19 +269,32 @@ header::after {
 }
 
 #image1 {
-  background: var(--secondary-dark-color)
-    url("../images/sven-brandsma-GZ5cKOgeIB0-unsplash.jpg") no-repeat center;
+  background: url("../images/sven-brandsma-GZ5cKOgeIB0-unsplash.jpg") no-repeat
+    center;
   background-size: cover;
 }
 
 #image2 {
-  background: var(--secondary-dark-color)
-    url("../images/r-architecture-TRCJ-87Yoh0-unsplash.jpg") no-repeat center;
+  background: url("../images/r-architecture-TRCJ-87Yoh0-unsplash.jpg") no-repeat
+    center;
   background-size: cover;
 }
 
+/* #image1,
+#image2 {
+  height: 100%;
+}
+
+#image1 img,
+#image2 img {
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+} */
+
 .image-wait {
-  display: none;
+  /* display: none; */
+  opacity: 0;
 }
 
 /* the carousel dots */

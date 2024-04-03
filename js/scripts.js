@@ -29,10 +29,10 @@ const toTopBtn = document.getElementsByClassName("toTop")[0];
   const deskLinksContainer = document.createElement("ul");
   deskLinksContainer.classList.add("desk-nav-container");
 
-  // create the links  dynamically and append it to the ul created above and then addit to the fragment and push the fran=gment to the nav element in the html
+  // create the links dynamically and append it to the ul created above and then add it to the fragment and push the fragment to the nav element in the html
 
   // for mobile
-  for (section of sections) {
+  for (let section of sections) {
     mobileLinksContainer.insertAdjacentHTML(
       "beforeend",
       `<li class='mobile-nav-item text-xbig '>
@@ -44,7 +44,7 @@ const toTopBtn = document.getElementsByClassName("toTop")[0];
   }
 
   // for desktop
-  for (section of sections) {
+  for (let section of sections) {
     deskLinksContainer.insertAdjacentHTML(
       "beforeend",
       `<li class='desk-nav-item text-xbig '>
@@ -85,7 +85,7 @@ const takeTurns = () => {
   }
 };
 
-// the click handler whitch change the active carousel item / dot by clickin dots
+// the click handler which change the active carousel item / dot by clickin dots
 const slide = (e) => {
   // a dot was clicked
   clearInterval(interval);
