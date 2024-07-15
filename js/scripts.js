@@ -138,7 +138,7 @@ const toTopBtnHandler = () => {
 const activeSectionsAndLinks = () => {
   // holds all sections that passed the views screen, put empty placeholder to pass the empty check below
   let current = [""];
-  for (section of sections) {
+  for (let section of sections) {
     const rect = section.getBoundingClientRect();
     if (
       rect.top < window.innerHeight * 0.75 ||
@@ -152,7 +152,7 @@ const activeSectionsAndLinks = () => {
   let currentActive = current[current.length - 1];
 
   // add the active class to the current active section
-  for (section of sections) {
+  for (let section of sections) {
     if (section.id === currentActive) {
       section.classList.add("active");
     } else {
@@ -171,7 +171,7 @@ const activeSectionsAndLinks = () => {
         }
       }
     }
-    for (deskLink of deskLinks) {
+    for (let deskLink of deskLinks) {
       if (deskLink.firstElementChild.hash === `#${currentActive}`) {
         deskLink.classList.add("active-nav-item");
       } else {
